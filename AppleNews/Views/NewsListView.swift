@@ -20,6 +20,7 @@ struct NewsListView: View {
             Text("Maritime farmers holding breath as record-dry spring wrings region")
                 .font(.title)
                 .fontWeight(.semibold)
+               
             
             Divider()
             
@@ -29,7 +30,11 @@ struct NewsListView: View {
                 Image(systemName: "ellipsis")
             }
             .foregroundColor(.secondary)
+            .padding(15)
         }
+        .background(Color("ArticleSlugBackground"))
+                
+            
     }
 }
 
