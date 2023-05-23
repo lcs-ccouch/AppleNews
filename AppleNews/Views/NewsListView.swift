@@ -9,37 +9,22 @@ import SwiftUI
 
 struct NewsListView: View {
     var body: some View {
-        VStack {
-            Image("Farming")
-                .resizable()
-                .scaledToFit()
-            Image("GlobeAndMail")
-                .resizable()
-                .scaledToFit()
+        ScrollView {
+            NewsItemView(image: "Farming", headline: "Maritime farmers holding breath as recod-dry spring wrings region", TimeSincePosted: "1h ago", source:"GlobeAndMail")
             
-            Text("Maritime farmers holding breath as record-dry spring wrings region")
-                .font(.title)
-                .fontWeight(.semibold)
-               
-            
-            Divider()
-            
-            HStack {
-                Text("1h ago")
-                Spacer()
-                Image(systemName: "ellipsis")
-            }
-            .foregroundColor(.secondary)
-            .padding(15)
-        }
-        .background(Color("ArticleSlugBackground"))
+             NewsItemView(image: "IcePatrol", headline: "After 100 years, the international Ice Patrol is winding down N.L. iceberg flights", TimeSincePosted: "1h ago", source:"CBCNEWS")
                 
+            NewsItemView(image: "E.JeanCarroll", headline: "E. Jean Carroll seeks $10 million in damages from Trump over post verdict statements", TimeSincePosted: "1h ago", source:"Reuters")
+            NewsItemView(image: "Sheep", headline: "New Zealand's ratio of sheep to humans at lowest point in 170 years", TimeSincePosted: "1h ago", source:"TheGuardian")
+           
             
+        }
     }
 }
 
 struct NewsListView_Previews: PreviewProvider {
     static var previews: some View {
         NewsListView()
+            .preferredColorScheme(.dark)
     }
 }
